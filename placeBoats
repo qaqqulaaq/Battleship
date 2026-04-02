@@ -1,0 +1,31 @@
+public class placeBoats{
+
+int[] allSpots= {       {0,0,0,0,0,0,0,0,0,0},
+                        {0,0,0,0,0,0,0,0,0,0},
+                        {0,0,0,0,0,0,0,0,0,0},
+                        {0,0,0,0,0,0,0,0,0,0},
+                        {0,0,0,0,0,0,0,0,0,0},
+                        {0,0,0,0,0,0,0,0,0,0},
+                        {0,0,0,0,0,0,0,0,0,0},
+                        {0,0,0,0,0,0,0,0,0,0},
+                        {0,0,0,0,0,0,0,0,0,0},
+                        {0,0,0,0,0,0,0,0,0,0},
+
+}
+
+int thisBoatsUnits = 0;
+String placingPrompt = 
+
+public void placingPrompt(thisBoatsUnits){
+    super.thisBoatsUnits;
+    System.out.println("The current boat is" + thisBoatsUnit + "units wide. On what coordinates would you like the bow (it will extend" + thisBoatsUnits + "spaces after that)?");
+}
+
+
+public static void placeDestroyer(){
+    thisBoatsUnits = 2;
+    Scanner input = new Scanner(System.in);
+    placingPrompt();
+
+}
+}
