@@ -1,8 +1,11 @@
-
-public class help { public static void main(String[]args){
-        String adrian = "hello";
-        String aticus = "xddcc";
-      String[][] atigun = {{"_","1","2","3","4","5","6","7","8","9","10"},
+public class shipRunner { public static void main(String[]args){
+        String icon = "hello";
+        String board = "xddcc";
+        boolean boat = false;
+        boolean hit = false;
+        boolean boyKisser = false;
+        
+String[][] source =    {{"_","1","2","3","4","5","6","7","8","9","10"},
                         {"A","0","0","0","0","0","0","0","0","0","0"},
                         {"B","0","0","0","0","0","0","0","0","0","0"},
                         {"C","0","0","0","0","0","0","0","0","0","0"},
@@ -13,22 +16,55 @@ public class help { public static void main(String[]args){
                         {"H","0","0","0","0","0","0","0","0","0","0"},
                         {"I","0","0","0","0","0","0","0","0","0","0"},
                         {"J","0","0","0","0","0","0","0","0","0","0"}};
-          aticus = "";
-   for(int I = 0; I < atigun.length;I++){
-    for(int i = 0; i < atigun[I].length;i++){
+          board = "";
+   for(int row = 0; row < source.length;row++){
+    for(int colm = 0; colm < source[row].length;colm++){
       
       
-      if( atigun[I][i] == "0"){
-         adrian = "C";
+      if( source[row][colm] == "~" || source[row][colm] == "0"){
+         boat = false;
+         hit = false;
+         boyKisser = false;
+      }
+      else if( source[row][colm] == "$"){
+         boat = false;
+         hit = true;
+         boyKisser = false;
+      }
+      else if( source[row][colm] == "*"){
+         boat = true;
+         hit = true;
+         boyKisser = false;
+      }
+      else if( source[row][colm] == "#"){
+         boat = true;
+         hit = false;
+         boyKisser = false;
       }
       else{
-         adrian = atigun[I][i];
+         boyKisser = true;
       }
+      if (boyKisser == true){
+         icon = source[row][colm];
+       }
+        else if(boat == true && hit == true){
+         icon = "*";
+       }
+       else if(boat == true && hit == false){
+         icon = "#";
+       }
+       else if(boat == false && hit == true){
+         icon = "$";
+       }
+       else if(boat == false && hit == false){
+         icon = "~";
+       }
        
-      aticus += adrian + " ";
+      board += icon + " ";
    }
-   aticus += "\n";
+   board += "\n";
    }
-   System.out.println(aticus);
+   System.out.println(board);
+   
 }
 }
