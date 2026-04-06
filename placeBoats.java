@@ -42,28 +42,104 @@ public void userPlaces(){
     System.out.println("Tell me the the y value you want the bow of your boat to be on");
     int bowY = input.nextInt();
     input.nextLine();
-    System.out.println("Tell me the x value you want the stern of your boat to be on (remember the boat has to extend " + thisBoatsUnits + " spaces after the bow)");
-    int sternX = input.nextInt();
-    input.nextLine();
-    System.out.println("Tell me the y value you want the stern of your boat to be on (remember the boat has to extend " + thisBoatsUnits + " spaces after the bow)");
-    int sternY = input.nextInt();
-    input.nextLine();   
+    // System.out.println("Tell me the x value you want the stern of your boat to be on (remember the boat has to extend " + thisBoatsUnits + " spaces after the bow)");
+    // int sternX = input.nextInt();
+    // input.nextLine();
+    // System.out.println("Tell me the y value you want the stern of your boat to be on (remember the boat has to extend " + thisBoatsUnits + " spaces after the bow)");
+    // int sternY = input.nextInt();
+    // input.nextLine();   
    
-    int XunitsInBetween = sternX - bowX;
-    // int YunitsInBetween = sternY - bowY;  
-    allSpots[bowX][bowY] = 1; 
 
-   for(int j = 0; j <= XunitsInBetween; j++){
-    allSpots[bowX + 1][bowY] = 1;
-   }
+    System.out.println("Now tell me the direction you want your boat to extend in (down, left, right)");
+    String direction = input.nextLine();
+
+    if(direction.equals("down")){
+       if(thisBoatsUnits == 2){
+        allSpots[bowX][bowY] = 1;
+        allSpots[bowX+1][bowY] = 1;
+       }
+       else if(thisBoatsUnits == 3){
+        allSpots[bowX][bowY] = 1;
+        allSpots[bowX+1][bowY] = 1;
+        allSpots[bowX+2][bowY] = 1;
+       }
+       else if(thisBoatsUnits == 4){
+        allSpots[bowX][bowY] = 1;
+        allSpots[bowX+1][bowY] = 1;
+        allSpots[bowX+2][bowY] = 1;
+        allSpots[bowX+3][bowY] = 1;
+       }
+       else if(thisBoatsUnits == 5){
+        allSpots[bowX][bowY] = 1;
+        allSpots[bowX+1][bowY] = 1;
+        allSpots[bowX+2][bowY] = 1;
+        allSpots[bowX+3][bowY] = 1;
+        allSpots[bowX+4][bowY] = 1;
+       }
+    }
+      else if(direction.equals("right")){
+        if(thisBoatsUnits == 2){
+            allSpots[bowX][bowY] = 1;
+            allSpots[bowX+1][bowY] = 1;
+           }
+           else if(thisBoatsUnits == 3){
+            allSpots[bowX][bowY] = 1;
+            allSpots[bowX+1][bowY] = 1;
+            allSpots[bowX+2][bowY] = 1;
+           }
+           else if(thisBoatsUnits == 4){
+            allSpots[bowX][bowY] = 1;
+            allSpots[bowX+1][bowY] = 1;
+            allSpots[bowX+2][bowY] = 1;
+            allSpots[bowX+3][bowY] = 1;
+           }
+           else if(thisBoatsUnits == 5){
+            allSpots[bowX][bowY] = 1;
+            allSpots[bowX+1][bowY] = 1;
+            allSpots[bowX+2][bowY] = 1;
+            allSpots[bowX+3][bowY] = 1;
+            allSpots[bowX+4][bowY] = 1;
+           }
+       }
+        else if(direction.equals("left")){
+          if(thisBoatsUnits == 2){
+                allSpots[bowX][bowY] = 1;
+                allSpots[bowX-1][bowY] = 1;
+              }
+              else if(thisBoatsUnits == 3){
+                allSpots[bowX][bowY] = 1;
+                allSpots[bowX-1][bowY] = 1;
+                allSpots[bowX-2][bowY] = 1;
+              }
+              else if(thisBoatsUnits == 4){
+                allSpots[bowX][bowY] = 1;
+                allSpots[bowX-1][bowY] = 1;
+                allSpots[bowX-2][bowY] = 1;
+                allSpots[bowX-3][bowY] = 1;
+              }
+              else if(thisBoatsUnits == 5){
+                allSpots[bowX][bowY] = 1;
+                allSpots[bowX-1][bowY] = 1;
+                allSpots[bowX-2][bowY] = 1;
+                allSpots[bowX-3][bowY] = 1;
+                allSpots[bowX-4][bowY] = 1;
+              }
+         }
+    }
+   
+
+
     System.out.println(java.util.Arrays.toString(placeBoats.allSpots[0]) + "\n" + java.util.Arrays.toString(placeBoats.allSpots[1]) + "\n" + java.util.Arrays.toString(placeBoats.allSpots[2]) + "\n" + java.util.Arrays.toString(placeBoats.allSpots[3]) + "\n" + java.util.Arrays.toString(placeBoats.allSpots[4]) + "\n" + java.util.Arrays.toString(placeBoats.allSpots[5]) + "\n" + java.util.Arrays.toString(placeBoats.allSpots[6]) + "\n" + java.util.Arrays.toString(placeBoats.allSpots[7]) + "\n" + java.util.Arrays.toString(placeBoats.allSpots[8]) + "\n" + java.util.Arrays.toString(placeBoats.allSpots[9]));
 
 
-    input.close();
+    
 }
-}
-
 
 
 
 }
+
+
+
+
+
