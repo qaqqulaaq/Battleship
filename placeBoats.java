@@ -27,17 +27,18 @@ public void placingPrompt(int thisBoatsUnits){
 int[] allBoatsUnits = {5,4,3,3,2};
 String[] allBoatsNames = {"Carrier", "Battleship", "Cruiser", "Submarine", "Destroyer"};
 
+// isaia in the futare, the creation of the scanner needs to be outside of the method so that it can be closed at the end of the game.
+//talk to voilet to see if it breaks stuff, i think we can move a lot of things  for the order to not change,but im not sure if having all of that out of the method will will ruin it.
 
 
-
-public void userPlaces(){
+public void userPlaces(Scanner input){
     for(int i = 0; i < allBoatsUnits.length; i++){
     
     thisBoatsUnits = allBoatsUnits[i];
 
     System.out.println("The current boat is " + allBoatsNames[i] + " and is " + thisBoatsUnits + " units wide. On what coordinates would you like the bow (it will extend " + thisBoatsUnits + " spaces after that)?");
 
-    Scanner input = new Scanner(System.in);
+    
     System.out.println("Tell me the the x value you want the bow of your boat to be on");
     int bowX = input.nextInt();
     input.nextLine();
@@ -145,15 +146,26 @@ public void userPlaces(){
          }
     }
    
-
+// input.close();
 
     System.out.println(java.util.Arrays.toString(placeBoats.allSpots[0]) + "\n" + java.util.Arrays.toString(placeBoats.allSpots[1]) + "\n" + java.util.Arrays.toString(placeBoats.allSpots[2]) + "\n" + java.util.Arrays.toString(placeBoats.allSpots[3]) + "\n" + java.util.Arrays.toString(placeBoats.allSpots[4]) + "\n" + java.util.Arrays.toString(placeBoats.allSpots[5]) + "\n" + java.util.Arrays.toString(placeBoats.allSpots[6]) + "\n" + java.util.Arrays.toString(placeBoats.allSpots[7]) + "\n" + java.util.Arrays.toString(placeBoats.allSpots[8]) + "\n" + java.util.Arrays.toString(placeBoats.allSpots[9]));
 
 
-    
+  
+  }
+
+public void closer(Scanner input){
+  input.close();
 }
 
-
+public int[] shotCreator(Scanner aimShot){
+   System.out.print("Enter a number for x coordinate");
+   int aimX = aimShot.nextInt();
+   System.out.print("Enter a number for y coordinate");
+   int aimY = aimShot.nextInt();
+int[] aimDelta = {aimX, aimY};
+return aimDelta;
+}
 
 }
 
