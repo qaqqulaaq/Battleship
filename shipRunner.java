@@ -35,7 +35,7 @@ String[][] source =    {{"_","1","2","3","4","5","6","7","8","9","10"},
    // the code board that can be edited ^
          Scanner violet = new Scanner(System.in);
          placeBoats v_v = new placeBoats();
-         v_v.userPlaces(violet);
+      //   v_v.userPlaces(violet);
          
    while(gameOver == false){
       //makes everything run forever
@@ -108,12 +108,13 @@ int aimXNew = aimDelta[0];
 int aimYNew = aimDelta[1];
 // the X and Y cords to edit single cell ^
 //versOne.attack(aimXNew, aimYNew);
+String duglost = player[aimXNew][aimYNew];
 
-   if(player[aimXNew][aimYNew] == "$"){
-    player[aimXNew][aimYNew] = "*";
+   if(duglost == "$"){
+    duglost = "*";
    }
-   else if(player[aimXNew][aimYNew] == "~"){
-    player[aimXNew][aimYNew] = "#";
+   else if(duglost.equals("~")){
+    duglost = "#";
 }
 else{
    System.out.println("You can't shoot there; try again");
@@ -170,6 +171,9 @@ else{
       }
       else if(hit == false && ship == false){
         icon = "~";
+     }
+     else{
+      icon = "E";
      }
      // turns all my booleans back into icons so that they can be printed off good
      board += icon + " ";
