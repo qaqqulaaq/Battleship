@@ -4,13 +4,13 @@ public class shipRunner { public static void main(String[]args){
        String board = "xddcc";
        boolean hit = false;
        boolean ship = false;
-       boolean boyKisser = false;
+       boolean boyKisser_symbolChecker = false;
      
        boolean gameOver = false;
 String[][] source =    {{"_","1","2","3","4","5","6","7","8","9","10"},
-                       {"A","0","0","0","0","0","0","0","0","0","0"},
-                       {"B","0","0","0","0","0","0","0","0","0","0"},
-                       {"C","0","0","0","0","0","0","0","0","0","0"},
+                       {"A","~","~","~","~","~","~","~","~","~","~"},
+                       {"B","~","~","~","~","~","~","~","~","~","~"},
+                       {"C","~","~","~","~","~","~","~","~","~","~"},
                        {"D","0","0","0","0","0","0","0","0","0","0"},
                        {"E","0","0","0","0","0","0","0","0","0","0"},
                        {"F","0","0","0","0","0","0","0","0","0","0"},
@@ -35,7 +35,7 @@ String[][] source =    {{"_","1","2","3","4","5","6","7","8","9","10"},
    // the code board that can be edited ^
          Scanner violet = new Scanner(System.in);
          placeBoats v_v = new placeBoats();
-      //   v_v.userPlaces(violet);
+         v_v.userPlaces(violet, source);
          
    while(gameOver == false){
       //makes everything run forever
@@ -49,29 +49,29 @@ String[][] source =    {{"_","1","2","3","4","5","6","7","8","9","10"},
      if( source[row][colm] == "~" || source[row][colm] == "0"){
         hit = false;
         ship = false;
-        boyKisser = false;
+        boyKisser_symbolChecker = false;
      }
-     else if( source[row][colm] == "$" || source[row][colm] == "1"){
+     else if( source[row][colm] == "$"){
         hit = false;
         ship = true;
-        boyKisser = false;
+        boyKisser_symbolChecker = false;
      }
      else if( source[row][colm] == "*"){
         hit = true;
         ship = true;
-        boyKisser = false;
+        boyKisser_symbolChecker = false;
      }
      else if( source[row][colm] == "#"){
         hit = true;
         ship = false;
-        boyKisser = false;
+        boyKisser_symbolChecker = false;
      }
      else{
-        boyKisser = true;
+        boyKisser_symbolChecker = true;
      }
      // makes all the icons have booleans tied to them so that (i think) they could be edited easier
      // if there isn't an icon there was before they get printed off anyway
-     if (boyKisser == true){
+     if (boyKisser_symbolChecker == true){
         icon = source[row][colm];
       }
        else if(hit == true && ship == true){
@@ -101,19 +101,20 @@ String[][] source =    {{"_","1","2","3","4","5","6","7","8","9","10"},
 
 //Aim versOne = new Aim();
 //Scanner aimShot = new Scanner(System.in);
-int[] aimDelta = v_v.shotCreator(violet);
+int[] aimDelta = {0,0};
+aimDelta = v_v.shotCreator(violet);
 // aticus's aim class being used ^ 
 
 int aimXNew = aimDelta[0];
 int aimYNew = aimDelta[1];
 // the X and Y cords to edit single cell ^
 //versOne.attack(aimXNew, aimYNew);
-String duglost = player[aimXNew][aimYNew];
+String duglost = (player[aimXNew][aimYNew]);
 
    if(duglost == "$"){
     duglost = "*";
    }
-   else if(duglost.equals("~")){
+   else if(duglost.equals("~") || duglost.equals("~")){
     duglost = "#";
 }
 else{
@@ -122,7 +123,7 @@ else{
    // gotta fix this to where i can make the code work, with it being aprt of this method still.
 }
 
-
+player[aimXNew] [aimYNew] = duglost;
 
 
 
@@ -134,30 +135,30 @@ else{
      if( player[row][colm] == "~" || player[row][colm] == "0"){
         hit = false;
         ship = false;
-        boyKisser = false;
+        boyKisser_symbolChecker = false;
      }
-     else if( player[row][colm] == "$" || player[row][colm] == "1"){
+     else if( player[row][colm] == "$"){
         hit = false;
         ship = true;
-        boyKisser = false;
+        boyKisser_symbolChecker = false;
      }
      else if( player[row][colm] == "*"){
         hit = true;
         ship = true;
-        boyKisser = false;
+        boyKisser_symbolChecker = false;
      }
      else if( player[row][colm] == "#"){
         hit = true;
         ship = false;
-        boyKisser = false;
+        boyKisser_symbolChecker = false;
      }
      else{
-        boyKisser = true;
+        boyKisser_symbolChecker = true;
      }
      // makes all the icons have booleans tied to them so that (i think) they could be edited easier
      // if there isn't an icon there was before they get printed off anyway
      // does everything  again but for the other list that i want to be edited more
-     if (boyKisser == true){
+     if (boyKisser_symbolChecker == true){
         icon = player[row][colm];
       }
        else if(hit == true && ship == true){
@@ -189,6 +190,77 @@ else{
 
    }
    violet.close();
+
+
+  if(icon == "CLOSE_GAME"){
+       violet.close();
+     }
 }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

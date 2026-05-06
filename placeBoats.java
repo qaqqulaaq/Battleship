@@ -2,18 +2,7 @@ import java.util.Scanner;
 
 public class placeBoats {
 
-static int[][] allSpots= {{0,0,0,0,0,0,0,0,0,0},
-                       {0,0,0,0,0,0,0,0,0,0},
-                       {0,0,0,0,0,0,0,0,0,0},
-                       {0,0,0,0,0,0,0,0,0,0},
-                       {0,0,0,0,0,0,0,0,0,0},
-                       {0,0,0,0,0,0,0,0,0,0},
-                       {0,0,0,0,0,0,0,0,0,0},
-                       {0,0,0,0,0,0,0,0,0,0},
-                       {0,0,0,0,0,0,0,0,0,0},
-                       {0,0,0,0,0,0,0,0,0,0},
 
-};
 
 int thisBoatsUnits = 0;
 String placingPrompt = "";
@@ -30,7 +19,7 @@ String[] allBoatsNames = {"Carrier", "Battleship", "Cruiser", "Submarine", "Dest
 
 
 
-public void userPlaces(Scanner input){
+public void userPlaces(Scanner input, String[][] allSpots){
    for(int i = 0; i < allBoatsUnits.length; i++){
   
    thisBoatsUnits = allBoatsUnits[i];
@@ -51,46 +40,46 @@ public void userPlaces(Scanner input){
 
    if(direction.equals("down")){
       if(thisBoatsUnits == 2){
-       if(allSpots[bowX][bowY] == 1){
+       if(allSpots[bowX][bowY] == "$"){
          System.out.println("\n ERROR: This spot is already filled; try again");
        }
        else{
-       allSpots[bowX][bowY] = 1;
-       allSpots[bowX+1][bowY] = 1;
+       allSpots[bowX][bowY] = "$";
+       allSpots[bowX+1][bowY] = "$";
        }
       }
       else if(thisBoatsUnits == 3){
-       if(allSpots[bowX][bowY] == 1){
+       if(allSpots[bowX][bowY] == "$"){
          System.out.println("\n ERROR: This spot is already filled; try again");
        }
        else {
-       allSpots[bowX][bowY] = 1;
-       allSpots[bowX+1][bowY] = 1;
-       allSpots[bowX+2][bowY] = 1;
+       allSpots[bowX][bowY] = "$";
+       allSpots[bowX+1][bowY] = "$";
+       allSpots[bowX+2][bowY] = "$";
        }
       }
       else if(thisBoatsUnits == 4){
-       if(allSpots[bowX][bowY] == 1){
+       if(allSpots[bowX][bowY] == "$"){
          System.out.println("\n ERROR: This spot is already filled; try again");
        }
        else {
-       allSpots[bowX][bowY] = 1;
-       allSpots[bowX+1][bowY] = 1;
-       allSpots[bowX+2][bowY] = 1;
-       allSpots[bowX+3][bowY] = 1;
+       allSpots[bowX][bowY] = "$";
+       allSpots[bowX+1][bowY] = "$";
+       allSpots[bowX+2][bowY] = "$";
+       allSpots[bowX+3][bowY] = "$";
        }
       }
       else if(thisBoatsUnits == 5){
-       if(allSpots[bowX][bowY] == 1){
+       if(allSpots[bowX][bowY] == "$"){
          System.out.println("\n ERROR: This spot is already filled; try again");
       
        }
        else {
-       allSpots[bowX][bowY] = 1;
-       allSpots[bowX+1][bowY] = 1;
-       allSpots[bowX+2][bowY] = 1;
-       allSpots[bowX+3][bowY] = 1;
-       allSpots[bowX+4][bowY] = 1;
+       allSpots[bowX][bowY] = "$";
+       allSpots[bowX+1][bowY] = "$";
+       allSpots[bowX+2][bowY] = "$";
+       allSpots[bowX+3][bowY] = "$";
+       allSpots[bowX+4][bowY] = "$";
        }
       }
    }
@@ -101,101 +90,96 @@ public void userPlaces(Scanner input){
 
      else if(direction.equals("right")){
        if(thisBoatsUnits == 2){
-         if(allSpots[bowX][bowY] == 1){
+         if(allSpots[bowX][bowY] == "$"){
          System.out.println("\n ERROR: This spot is already filled; try again");
        }
        else {
-           allSpots[bowX][bowY] = 1;
-           allSpots[bowX+0][bowY+1] = 1;
+           allSpots[bowX][bowY] = "$";
+           allSpots[bowX+0][bowY+1] = "$";
           }
          }
           else if(thisBoatsUnits == 3){
-           if(allSpots[bowX][bowY] == 1){
+           if(allSpots[bowX][bowY] == "$"){
              System.out.println("\n ERROR: This spot is already filled; try again");
            }
            else {
-           allSpots[bowX][bowY] = 1;
-           allSpots[bowX+0][bowY+1] = 1;
-           allSpots[bowX+0][bowY+2] = 1;
+           allSpots[bowX][bowY] = "$";
+           allSpots[bowX+0][bowY+1] = "$";
+           allSpots[bowX+0][bowY+2] = "$";
            }
           }
           else if(thisBoatsUnits == 4){
-           if(allSpots[bowX][bowY] == 1){
+           if(allSpots[bowX][bowY] == "$"){
              System.out.println("\n ERROR: This spot is already filled; try again");
            }
            else {
 
-           allSpots[bowX][bowY] = 1;
-           allSpots[bowX+0][bowY+1] = 1;
-           allSpots[bowX+0][bowY+2] = 1;
-           allSpots[bowX+0][bowY+3] = 1;
+           allSpots[bowX][bowY] = "$";
+           allSpots[bowX+0][bowY+1] = "$";
+           allSpots[bowX+0][bowY+2] = "$";
+           allSpots[bowX+0][bowY+3] = "$";
            }
           }
           else if(thisBoatsUnits == 5){
-           if(allSpots[bowX][bowY] == 1){
+           if(allSpots[bowX][bowY] == "$"){
              System.out.println("\n ERROR: This spot is already filled; try again");
            }
            else {
 
-           allSpots[bowX][bowY] = 1;
-           allSpots[bowX+0][bowY+1] = 1;
-           allSpots[bowX+0][bowY+2] = 1;
-           allSpots[bowX+0][bowY+3] = 1;
-           allSpots[bowX+0][bowY+4] = 1;
+           allSpots[bowX][bowY] = "$";
+           allSpots[bowX+0][bowY+1] = "$";
+           allSpots[bowX+0][bowY+2] = "$";
+           allSpots[bowX+0][bowY+3] = "$";
+           allSpots[bowX+0][bowY+4] = "$";
            }
           }
       }
        else if(direction.equals("left")){
          if(thisBoatsUnits == 2){
-           if(allSpots[bowX][bowY] == 1){
+           if(allSpots[bowX][bowY] == "$"){
              System.out.println("\n ERROR: This spot is already filled; try again");
            }
            else {
           
-               allSpots[bowX][bowY] = 1;
-               allSpots[bowX][bowY-1] = 1;
+               allSpots[bowX][bowY] = "$";
+               allSpots[bowX][bowY-1] = "$";
            }
              }
              else if(thisBoatsUnits == 3){
-               if(allSpots[bowX][bowY] == 1){
+               if(allSpots[bowX][bowY] == "$"){
                  System.out.println("\n ERROR: This spot is already filled; try again");
                }
                else {
-               allSpots[bowX][bowY] = 1;
-               allSpots[bowX][bowY-1] = 1;
-               allSpots[bowX][bowY-2] = 1;
+               allSpots[bowX][bowY] = "$";
+               allSpots[bowX][bowY-1] = "$";
+               allSpots[bowX][bowY-2] = "$";
                }
              }
              else if(thisBoatsUnits == 4){
-               if(allSpots[bowX][bowY] == 1){
+               if(allSpots[bowX][bowY] == "$"){
                  System.out.println("\n ERROR: This spot is already filled; try again");
                }
                else {
-               allSpots[bowX][bowY] = 1;
-               allSpots[bowX][bowY-1] = 1;
-               allSpots[bowX][bowY-2] = 1;
-               allSpots[bowX][bowY-3] = 1;
+               allSpots[bowX][bowY] = "$";
+               allSpots[bowX][bowY-1] = "$";
+               allSpots[bowX][bowY-2] = "$";
+               allSpots[bowX][bowY-3] = "$";
                }
              }
              else if(thisBoatsUnits == 5){
-               if(allSpots[bowX][bowY] == 1){
+               if(allSpots[bowX][bowY] == "$"){
                  System.out.println("\n ERROR: This spot is already filled; try again");
                }
                else {
-               allSpots[bowX][bowY] = 1;
-               allSpots[bowX][bowY-1] = 1;
-               allSpots[bowX][bowY-2] = 1;
-               allSpots[bowX][bowY-3] = 1;
-               allSpots[bowX][bowY-4] = 1;
+               allSpots[bowX][bowY] = "$";
+               allSpots[bowX][bowY-1] = "$";
+               allSpots[bowX][bowY-2] = "$";
+               allSpots[bowX][bowY-3] = "$";
+               allSpots[bowX][bowY-4] = "$";
                }
              }
         }
-   }
- 
-
-
-   System.out.println(java.util.Arrays.toString(placeBoats.allSpots[0]) + "\n" + java.util.Arrays.toString(placeBoats.allSpots[1]) + "\n" + java.util.Arrays.toString(placeBoats.allSpots[2]) + "\n" + java.util.Arrays.toString(placeBoats.allSpots[3]) + "\n" + java.util.Arrays.toString(placeBoats.allSpots[4]) + "\n" + java.util.Arrays.toString(placeBoats.allSpots[5]) + "\n" + java.util.Arrays.toString(placeBoats.allSpots[6]) + "\n" + java.util.Arrays.toString(placeBoats.allSpots[7]) + "\n" + java.util.Arrays.toString(placeBoats.allSpots[8]) + "\n" + java.util.Arrays.toString(placeBoats.allSpots[9]));
-
+      }
 
   
 }
